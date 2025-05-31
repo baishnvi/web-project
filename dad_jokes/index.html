@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dad jokes generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Dad joke Generator</h1>
+        <p class="joke" id="joke">Dad Joke</p>
+        <button class="btn" id="btn">Tell me a joke</button>
+    </div>
+    
+  <script>
+    const btnE1 = document.getElementById("btn");
+    const jokeE1 = document.getElementById("joke");
+    
+    const apiKey = "KCh2e5eGgiwfmYbMmO/Krw==oZ45hWr2YTj3ZrUh";
+
+    const options = {
+        methods: "GET",
+        headers: {
+            "X-Api-Key": apiKey,
+        },
+    };
+
+   const apiURL = "https://api.api-ninjas.com/v1/dadjokes";
+
+   async function getjoke(){
+        
+    try {
+        jokeE1.innerText = "Updating...";
+       btnE1.disabled = true;
+       btnE1.innerText = "Loading...";
+       const response = await fetch(apiURL, options); 
+       const data =await response.json();
+
+       btnE1.disabled = false;
+       btnE1.innerText = "Tell me a joke";
+       jokeE1.innerText = data[0].joke;
+    } catch (error) {
+        jokeE1.innerText = "An error happened, try again latter";
+        btnE1.disabled = false;
+        btnE1.innerText = "Tell me a joke";
+        console.log(error);
+    }    
+}
+    btnE1.addEventListener("click",getjoke);
+
+
+
+
+
+  </script>
+
+</body>
+</html>

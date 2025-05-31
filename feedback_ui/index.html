@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback UI</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container" id="container">
+        <h1 class="heading">Feedback UI</h1>
+        <div class="ratings-conatiner" id="ratings-conatiner">
+            <div class="rating">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZe-BGh3u-ByM7yd2W8kmrFitMTbKbbOexog&s" alt="">
+                <small>Unhappy</small>
+            </div>
+
+              <div class="rating">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa9_WaIOLestWmY9q_VDnET89gzowSxETxZg&s" alt="">
+                <small>Netural</small>
+            </div>
+
+              <div class="rating">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjB6d-_seT4XeRB2lN_J_-5TA0oyZkeUv7_Q&s" alt="">
+                <small>happy</small>
+            </div>
+        </div>
+        <button class="btn" id="btn">Send Review</button>
+    </div>
+
+   <script>
+    const ratingEls = document.querySelectorAll(".rating");
+    const btnE1 = document.getElementById("btn");
+    const containerE1 = document.getElementById("container");
+    let selectedRating = "";
+    ratingEls.forEach((ratingEls) =>{
+        ratingEls.addEventListener("click", (event) =>{
+           removeActive();
+           selectedRating =
+            event.target.innerText || event.target.parentNode.innerText;
+           event.target.classList.add("active");
+            event.target.parentNode.classList.add("active");
+        });
+    });
+
+     btnE1.addEventListener("click", ()=>{
+        if(selectedRating !== ""){
+            containerE1.innerHTML = `
+            <strong>thank you! </strong>
+             <br><br>
+             <strong>Feedback: ${selectedRating}</strong>
+             <p> we'll use your feedback to improve our customer support.</p>
+            `;
+        }
+     })
+
+    function removeActive(){
+        ratingEls.forEach((ratingEl) => {
+            ratingEl.classList.remove("active");
+
+        });
+    }
+
+   </script>
+
+</body>
+</html>
+
