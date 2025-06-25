@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Dictionary</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">English Dictionary</h1>
+
+        <input placeholder="search a word"
+        type="text" class="input" id="input"/>
+
+        <p class="info-text" id="info-text">Type a word and press enter</p>
+
+        <div class="meaning-container" 
+        id="meaning-container">
+    <p> word Title :<space class="title"
+        id="title">______</space></p>
+
+        <p> Meaning :<space class="Meaning"
+        id="Meaning">______</space></p>
+        <audio src="" controls id="audio"></audio>
+    </div>
+    </div>
+    <script>
+    
+    const inputE1 = document.getElementById("input");
+    const infoTextE1 = document.getElementById("info-text");
+    const meaningContainerE1 = document.getElementById("meaning-container");
+    const titleE1 = document.getElementById(title);
+
+   async function fetchAPI(word){
+           
+    try {
+         infoTextE1.style.display = "block";
+          meaningContainerE1.style.display = "none";
+
+        infoTextE1.innerText = `Searching the meaning of "${word}"`;
+        const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+        const result = await fetch(url).then((res) => 
+        res.json());  
+
+        infoTextE1.style.display = "none";
+          meaningContainerE1.style.display = "block";
+    } catch (error) {
+        console.log(error);
+        
+    }
+        
+    };
+
+    inputE1.addEventListener("keyup", (e)=> {
+     if(e.target.value && e.key === "Enter"){
+        fetchAPI(e.target.value);
+
+     };
+
+    });
+
+  
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
