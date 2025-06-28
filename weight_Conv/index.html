@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight_Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Weight Converter</h1>
+        <div class="input-container">
+            <label for="pounds">Pounds :</label>
+            <input type="number" id="input" class="input" step=".1" placeholder="Enter Number">
+        </div>
+        <p>Your weight in kg is: <span id="result"></span></p>
+        <p class="error" id="error">Error</p>
+
+    </div>
+    <script>
+    
+    const inputE1 = document.getElementById("input");
+    const errorE1 = document.getElementById("error");
+    const resultE1 = document.getElementById("result");
+
+    let errorTime;
+    let resultTime;
+
+     function updateResults(){
+        if(inputE1.value < 0 || isNaN(inputE1.value)){
+            errorE1.innerText = "Please enter a valid number!"
+           clearTimeout(errorTime);
+           errorTime = setTimeout(()=>{
+                errorE1.innerText = "";
+                inputE1.value = "";
+            },2000);
+        }else{
+            resultE1.innerText = (+inputE1.value / 2.2).toFixed(2);
+            clearTimeout(resultTime);
+           resultTime = setTimeout(() => {
+            resultE1.innerText="";
+            inputE1.value = "";
+           }, 10000);
+        }
+     }
+     inputE1.addEventListener("input",updateResults)
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
