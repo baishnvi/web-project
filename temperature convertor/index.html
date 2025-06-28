@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperture Convertor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="conatiner">
+        <h1 class="heading">Temperture Convertor</h1>
+
+        <div class="temp-conatiner">
+            <label for="celsius">celsius:</label>
+            <input onchange="computeTemp(event)" type="number" name="celsius"
+            id="celsius" placeholder="Enter Temperture" class="input">
+        </div>
+
+        <div class="temp-conatiner">
+            <label for="fahrenheit">fahrenheit:</label>
+            <input onchange="computeTemp(event)" type="number" name="fahrenheit" id="fahrenheit" 
+            placeholder="Enter Temperture" class="input">
+        </div>
+
+        <div class="temp-conatiner">
+           <label for="Kelvin">Kelvin:</label>
+            <input onchange="computeTemp(event)" type="number" name="Kelvin" id="Kelvin" 
+            placeholder="Enter Temperture" class="input">
+        </div>
+    </div>
+
+    <script>
+      const celsiusE1 = document.getElementById("celsius");
+      const fahrenheitE1 = document.getElementById("fahrenheit");
+      const kelvinE1 = document.getElementById("Kelvin");
+
+      function computeTemp(event){
+        const currentValue = +event.target.value;
+
+        switch (event.target.name) {
+            case "celsius":
+                kelvinE1.value = (currentValue + 273.32).toFixed(2);
+                fahrenheitE1.value = (currentValue * 1.8 + 32).toFixed(2);
+                break;
+        case "fahrenheit":
+        celsiusE1.value = ((currentValue - 32) / 1.8).toFixed(2);
+        kelvinE1.value = ((currentValue - 32) / 1.8 + 273.32).toFixed(2);
+        break;
+
+        case "kelvin":
+            celsiusE1.value = (currentValue - 273.32).toFixed(2);
+            fahrenheitE1.value = ((currentValue - 273.32) * 1.8 + 32).toFixed(2);
+            break;
+
+            default:
+                break;
+        }
+      }
+
+
+
+
+
+
+   </script>
+</body>
+</html>
