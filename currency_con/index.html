@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency_converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Currency Converter</h1>
+        <div class="currency-container">
+            <select id="currency-first">
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+                <option value="USD">USD</option>
+            </select>
+            <input type="number" id="worth-first" value="1" min="0">
+        </div>
+
+        <div class="currency-container">
+            <select id="currency-second">
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR" selected>INR</option>
+                <option value="JPY">JPY</option>
+                <option value="USD">USD</option>
+            </select>
+            <input type="number" id="worth-second" disabled>
+        </div>
+        <p class="exchange-rate" id="exchange-rate">1 USD = 138.5802 JPY</p>
+    </div>
+
+
+    <script>
+
+    const currencyFirstE1 = document.getElementById("currency-first");
+    const worthFirstE1 =  document.getElementById("worth-first");
+    const currencySecondE1 =  document.getElementById("currency-second");
+    const worthSecondE1 =  document.getElementById("worth-second");
+    const exchangeRateE1 =  document.getElementById("exchange-rate");
+    
+    updateRate()
+
+    function updateRate(){
+     fetch(`https://v6.exchangerate-api.com/v6/cc30ff7b993a5104ea863318/latest/${currencyFirstE1.value}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const rate = data.conversion_rates[currencySecondE1.value];
+        console.log(rate);
+ exchangeRateE1.innerText = `1 ${currencyFirstE1.value} = ${rate + " " + currencySecondE1.value}`;
+    worthSecondE1.value = (worthFirstE1.value * rate).toFixed(2)
+      });
+    }
+
+    currencyFirstE1.addEventListener("change",updateRate);
+    currencySecondE1.addEventListener("change",updateRate);
+    worthFirstE1.addEventListener("input",updateRate);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
