@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+    <div id="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    
+    <script>
+        const timerE1 = document.getElementById("timer");
+        const startButtonE1 = document.getElementById("start");
+        const stopButtonE1 = document.getElementById("stop");
+        const resetButtonE1 = document.getElementById("reset");
+
+        let stratTime = 0;
+        let elapsedTime = 0;
+        let timerInterval;
+
+        function startTimer(){
+            stratTime = Date.now()-elapsedTime;
+            timerInterval =  setInterval(()=>{
+              elapsedTime = Date.now() - stratTime
+              timerE1.textContent = formatTime(elapsedTime);
+            },10);
+
+            startButtonE1.disabled = true;
+            stopButtonE1.disabled = false;
+        }
+        function formatTime(elapsedTime){
+          const miliseconds = Math.floor((elapsedTime % 1000) / 10);
+          const seconds = Math.floor((elapsedTime % (1000 *60)) / 1000);
+          const minuts = Math.floor((elapsedTime % (1000 *60*60)) / (1000*60));
+          const hours = Math.floor(elapsedTime / (1000 *60*60));
+
+          return (
+
+          (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" +
+
+            (minuts ? (minuts > 9 ? minuts : "0" + minuts) : "00") + ":" +
+
+            (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") + "." +
+
+             (miliseconds > 9 ? miliseconds : "0" + miliseconds)
+        );
+        }
+
+         function stopTimer(){
+            clearInterval(timerInterval);
+            startButtonE1.disabled = false;
+            stopButtonE1.disabled = true;
+        }
+
+         function resetTimer(){
+            clearInterval(timerInterval);
+            elapsedTime = 0;
+            timerE1.textContent = "00:00:00";
+            startButtonE1.disabled = false;
+            stopButtonE1.disabled = true;
+        }
+        startButtonE1.addEventListener("click",startTimer);
+        stopButtonE1.addEventListener("click",stopTimer);
+        resetButtonE1.addEventListener("click",resetTimer);
+
+    </script>
+</body>
+</html>
