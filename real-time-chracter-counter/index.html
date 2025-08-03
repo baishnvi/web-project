@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Real-time Charater Counter</h2>
+        <textarea id="textarea" class="textarea" 
+        placeholder="Please write your text here...."
+        maxlength="150"></textarea>
+        <div class="counter-container">
+            <p>Total Charaters: <span class="total-counter" id="total-counter"></span></p>
+            <p>Remaining : <span class="remaining-counter" id="remaining-counter"></span></p>
+        </div>
+    </div>
+
+ <script>
+   const textareaE1 = document.getElementById("textarea");
+   const totalCounterE1 = document.getElementById("total-counter");
+   const RemainingCounterE1 = document.getElementById("remaining-counter");
+
+   textareaE1.addEventListener("keyup", ()=>{
+    updateCounter();
+   });
+   updateCounter();
+
+   function updateCounter(){
+    totalCounterE1.innerText = textareaE1.value.length;
+    RemainingCounterE1.innerText = textareaE1.getAttribute("maxLength")-
+    textareaE1.value.length;
+   }
+
+ </script>
+
+</body>
+</html>
