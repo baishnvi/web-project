@@ -1,0 +1,40 @@
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #74ebd5, #ACB6E5);
+    color: white;
+    padding: 100px 20px;
+    transition: background 1s ease-in-out;
+}
+
+.hero:hover {
+    background: linear-gradient(120deg, #ACB6E5, #74ebd5);
+}
+
+/* Image Animation */
+.animate-img {
+    transition: transform 0.5s ease;
+}
+
+.animate-img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* About Section */
+.about h2 {
+    color: #333;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Contact Section */
+.contact input[type="text"] {
+    transition: all 0.3s ease;
+}
+
+.contact input[type="text"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
