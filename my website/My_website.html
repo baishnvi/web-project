@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    *{
+        padding:0px;
+        margin:0px;
+    }
+    body{
+        font-family: Roboto, sans-serif, arial;
+        background: #f0f3fa;
+    }
+    .width-100{
+    width:100%;
+    float:left;
+    }
+    .container{
+    width: 1350px;
+    margin: auto;
+    
+    }
+    .header{
+        background: rgb(238, 124, 10);
+        padding: 24px 0px;
+        border-bottom: 1px solid #3131315e;
+    }
+    .news-list{
+    background:rgb(238, 124, 10);
+    color: aqua;
+    padding: 1px;
+    font-size: 15px;
+    }
+    .headquote{
+    font-size: 15px;
+    color: black;
+    width: 70%;
+    }
+    .header-menu{ 
+        background-color: #00000036;
+    position: relative;
+    box-shadow: 0px 2px 5px 0px #00000036;
+    }
+    .main-menu{ 
+    list-style: none;
+    align-items: center;
+    margin-top: 20px;
+    
+   }
+   .main-menu{
+    font-weight: 500;
+    color: #3a3a3a;
+    font-size: 20px; 
+    text-decoration: none; 
+  }
+  .main-menu li{
+    float: left;
+    padding: 10px 25px;
+  }
+  .main-menu li:hover{
+    background:  rgb(238, 124, 10);
+   }
+   
+   .width-101{
+    width:100%;
+    float:left;
+    background-color: white;
+    }
+   
+   .logo{
+    
+    width:fit-content;
+    float: left; 
+    height: 100%;
+
+   }
+    .logo img{
+        padding-left: 600px;
+    height: 100%;
+    
+    }
+   .main-2 ul{
+        display: flex;
+        align-items: center;
+    }
+    
+    ul li{
+        list-style: none;
+    }
+
+     ul li a{
+        text-decoration: none;
+        margin-inline: 15px;
+        color:black;
+        font-size: 16px;
+        
+    
+    }
+    ul li a:hover, ul li .active{
+        color:green;
+        border-bottom: 2px solid green;
+        
+    }
+    .icon{
+        align-items: center;
+        font-size: 28px;
+        margin-left: 12px;
+    }
+    @media only screen and (max-width:60){
+        nav ul{
+            display: none;
+        }
+        .icon{
+            display: flex;
+            cursor: pointer;
+        }
+    }
+    .showData{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        background-color: rgb(103,102,102); 
+        width: 100%;
+        height: 290px;
+        text-align: center;
+        padding: 0px;
+        gap:22px;
+    }
+
+    .slider{
+        width: 100%;
+        height: 530px;
+        overflow: hidden;
+    }
+    figure{
+        position: relative;
+        left:0;
+        width: 400%;
+        animation: 10s slide infinite;
+    }
+    .slide{
+        position: relative;
+        width: 25%;
+        float: left;
+    }
+    .slide h1{
+        font-size: 3em;
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        position: absolute;
+
+    }
+    .slide img{
+        width: 100%;
+        height: 500px;
+    }
+    @keyframes slide{
+        0%{
+            left:0%;
+        }
+        10%{
+            left:0%;
+        }
+        20%{
+            left:-100%;
+        }
+        30%{
+            left:-200%;
+        }
+        40%{
+            left:-200%;
+        }
+        50%{
+            left:-300%;
+        }
+        55%{
+            left:-300%;
+        }
+        65%{
+            left:-300%;
+        }
+        66%{
+            left:-200%;
+        }
+        74%{
+            left:-200%;
+        }
+        75%{
+            left:-100%;
+        }
+        85%{
+            left:-100%;
+        }
+        90%{
+            left:0%;
+        }
+        100%{
+            left:0%;
+        }
+    }
+
+
+    .width-33{
+    width:33%;
+    float: left;
+}
+.latest-news{
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    margin-bottom: 30px;
+
+}
+.heading-sect{
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #cfcfcf;
+    padding-bottom: 0px;
+    margin: 0px;
+    margin-bottom: 15px;
+    border: 1px solid #cfcfcf;
+    padding-top: 15px;
+    padding-left: 15px;
+    background: #f7e418;
+    color: white;
+
+}
+.head-title{
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 5px;
+
+}
+.latest-news-ul{
+    padding: 0px;
+    list-style: none;
+    line-height: 40px;
+
+}
+.event-list{
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    margin-bottom: 30px;
+
+}
+.upcoming-event-list{
+    padding: 0px;
+    list-style: none;
+
+}
+.upcoming-event-list li{
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+}
+.event-date{
+    background: #f5710cfe;
+    width: 30px;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    padding: 8px;
+    margin-right: 10px;
+
+}
+.notice-board{
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    margin-bottom: 30px;
+}
+.notice-board-list{
+    padding: 0px;
+    list-style: none;
+    line-height: 19px;
+
+}
+.notice-board-list li{
+      width: 100%;
+      float: left;
+      margin-bottom: 28px;
+}
+.our-principal{
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    margin-bottom: 30px;
+
+}
+.useful-info-ul{
+    list-style: none;
+}
+.useful-info-ul li{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 15px;
+}
+.useful-info-ul a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.gov-sec-style{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 30px;
+}
+.governor-name{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    padding-left: 10px;
+    margin-top: 20px;
+
+}
+.governor-designation{
+    font-size: 15px;
+    columns: black;
+    padding-left: 10px;
+    margin-top: 6px;
+
+}
+.governor-img{
+    width: 80%;
+
+}
+.width-40{
+    width: 40%;
+    float: left;
+}
+.width-60{
+    width: 60%;
+    float: left;
+}
+.about-us{
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    margin-bottom: 30px;
+
+}
+.certificate{
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #fff;
+    padding: 20px;
+    height: 350px;
+    margin-bottom: 30px;
+
+}
+.gallery-head-style{
+    font-size: 28px;
+    color: #4b4848;
+    margin-bottom: 5px;
+    background: white;
+    padding: 2px 0px;
+
+}
+.width-25{
+    width: 25%;
+    float: left;
+}
+.gallery-img{
+    height: 250px;
+    width: auto;
+
+}
+.recruiter-head-style{
+    font-size: 28px;
+    color: #4b4848;
+    margin-bottom: 5px;
+}
+.recruiter-marquee{
+  height: 100px;
+}
+.recruiter-marquee img{
+    height: 80px;
+    width: 140px;
+}
+.footer{
+  background: #232f3e;
+  padding: 50px 0px;
+}
+.quicklink-heading{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+.quicklink-menu{
+    list-style: none;
+    padding-left: 10px;
+
+}
+.quicklink-menu li a{
+    color: #fff;
+    line-height: 2.5;
+    font-size: 15px;
+    text-decoration: none;
+}
+.get-in-touch{
+    list-style: none;
+    padding-left: 10px;
+}
+.get-in-touch li i{
+    color: #ed372c;
+    font-size: 20px;
+
+}
+.get-in-touch li{
+    color: #fff;
+    line-height: 2.5;
+    font-size: 15px;
+}
+.footer-e-mail{
+    font-size:15px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+.footer-website{
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+.social-media{
+  list-style: none;
+  margin-top: 10px;
+}
+.social-media li{
+    float: left;
+    padding: 0px 8px;
+
+}
+.social-media li a img{
+      width: 30px;    
+
+}
+.footer2-bacbor{
+    background: #232f3e;
+    padding: 10px 0px;
+    border-top: 1px solid #898989;
+}
+.footer-content{
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+
+}
+
+    </style>
+
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="width-100">
+            <b class="news-list">Application Open-</b>
+            <marquee class="headquote">Application open for LPUNEST 2025.click here the avil Maximum Scolership Benefits!  
+            <marquee>LPUNEST Study Grant 6th Edition Ranks Declared</marquee>
+            </marquee>
+        </div>
+    </div>
+</div>
+
+<div class="width-100 header-menu">
+    <div class="container">
+        <ul class="main-menu">
+            <li><a href="#" class="active"><b>ABOUT</b></a></li>
+           <li><a href="#">ADMISSION </a></li>
+           <li><a href="#">PLACEMENT</a></li>
+           <li><a href="#">ACADEMICS</a></li>
+           <li><a href="#">EXPLORE PROGRAMMES</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="header1">
+    <div class="container">
+        <div class="width-101">
+            <div class="logo"><img src="images1/download.png"> </div>
+            <div class="main-2">
+            <ul>
+                <li><a href="#">Campous life</a></li>
+                <li><a href="#"></a>Reasearch</li>
+                <li><a href="#">Contact</a></li>
+                <i class=" fa fa-search"></i>
+                <input type="text" placeholder="search...">
+               </ul>
+
+               <div class="icon">
+                <i class="fa fa-bars"></i>
+               </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+<div class="slider">
+    <figure>
+        <div class="slide">
+            <h1>LPU Punjab</h1>
+            <img src="images1/images (1).jpeg" alt="">
+        </div>
+
+        <div class="slide">
+            <h1>LPU beauty</h1>
+            <img src="images1/download (1).jpeg" alt="">
+        </div>
+
+        <div class="slide">
+            <h1>Lovely university</h1>
+            <img src="images1/images.jpeg" alt="">
+        </div>
+
+        <div class="slide">
+            <h1>professional courses</h1>
+            <img src="images1/images (2).jpeg" alt="">
+        </div>
+    
+    </figure>
+</div>
+ 
+<div class="width-100 margin-top-50">
+    <div class="container">
+        <div class="width-33">
+            <div class="latest-news">
+                <div class="heading-sect">
+                    <h3 class="head-title">Latest New</h3>
+                </div>
+                <marquee direction="up">
+                    <ul class="latest-news-ul">
+                        <li>31 mar 2022 ph D merit list part 01_16 feb 2022</li>
+                        <li> 31 mar 2022 ph D merit list part 02_16 feb 2022</li>
+                        <li>31 mar 2022 Incubation Distictiveness</li>
+                        <li>24 may 2022 Incubation Center</li>
+                        <li>31 mar 2022 Academics calender Session 2019-20</li>
+                        <li>16 feb 2022 ph D merit list part 01_16 feb 2022</li>
+                        <li>16 feb 2022</li>
+                    </ul>
+                </marquee>
+            </div>
+        </div>
+     <div class="width-33">
+        <div class="event-list">
+            <div class="heading-sect">
+                <h3 class="head-title">Upcoming Events</h3>
+           </div>
+           <ul class="upcoming-event-list">
+            <li><span class="event-date">29<br> April </span><span> Seminar is conducted on BCA course</span></li>
+            <li><span class="event-date">30<br> April </span><span> Seminar is conducted on B.com course</span></li>
+            <li><span class="event-date">2<br> Mar </span><span>  conducted on its 2nd covocation ceremony.</span></li>
+            <li><span class="event-date">5<br> Mar </span><span> Seminar is conducted on BCA course</span></li>
+            <li><span class="event-date">29<br> April </span><span> Anuual Meetimg for batch of bba (2018 to 2021) 
+             and seminar will be conducted for future growth and oppurtunity. </span></li>
+           </ul>
+    </div>
+</div>
+<div class="width-33">
+    <div class="notice-board">
+        <div class="heading-sect">
+            <h3 class="head-title">Upcoming Events</h3>
+        </div>
+        <ul class="notice-board-list">
+            <li>Participation in climate correction day (ccd) challenge for mission life</li>
+            <li> west zone neter University table taniss (man) Tournament 2022-23</table></li>
+            <li>PHD registration form for selectedd candiates</li>
+            <li>List of activities oragnised under teoip-IIT</li>
+            <li>Documents for empanellment of Vender for a Class contryactor</li>
+            <li>School of Architecture College level counselling 2022-23</li>
+        </ul>
+    </div>
+</div>
+<div class="width-100">
+    <div class="container">
+        <div class="width-33">
+    <div class="our-principal">
+        <div class="heading-sect">
+            <h3 class="head-title">Useful Information</h3>
+        </div>
+        <ul class="useful-info-ul">
+            <li><a href="#">Online Service</a></li>
+            <li><a href="#">Online Result</a></li>
+            <li><a href="#">Exam Time Table</a></li>
+            <li><a href="#">Tenders</a></li>
+        </ul>
+        </div>
+          </div>
+          <div class="width-33">
+            <div class="about-us">
+                <div class="heading-sect">
+                    <h3 class="head-title">Useful Information</h3>
+                </div>
+                <div class="width-100 gov-sec-style">
+                    <div class="width-40">
+                        <img class="governor-img" src="images1/download (4).jpeg">
+                    </div>
+                    <div class="width-60">
+                        <p class="governor-name">Shailesh Hadl</p>
+                        <p class="governor designation">Principal , my college</p>
+                    </div>
+                </div>
+                <div class="width-40">
+                    <img class="governor-img" src="images1/download (1).webp">
+                </div>
+                <div class="width-60">
+                    <p class="governor-name">Bhagwant Mann</p><br>
+                    <p class="governor designation"> Hon'ble Governor of uttar pardesh</p>
+                </div>
+           </div>
+           </div>
+           <div class="width-33">
+            <div class="certificate">
+                <div class="heading-sect">
+                    <h3 class="head-title">Useful Information</h3>
+                </div>
+            <img src="images1/download (5).jpeg" class="width-100">
+             </div>
+                </div>
+                     </div>
+                     <div class="width-100 margin-top-50">
+                        <h3 class="gallery-head-style">Gallery</h3>
+                        <div class="width-25"><img src="images1/download (2).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (4).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (5).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (10).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (11).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (12).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (7).jpeg" class="gallery-img"></div>
+                        <div class="width-25"><img src="images1/images (9).jpeg" class="gallery-img"></div>
+                    </div>
+             </div>
+
+             <div class="width-100 margin-top-50">
+                <div class="container">
+                    <h3 class="recruiter-head-style"> Top Recruiters Company</h3>
+                    <marquee class="recruiter-marquee">
+                        <img src="images1/download (3).png">
+                        <img src="images1/download (4).png">
+                        <img src="images1/download (5).png">
+                        <img src="images1/download (3).jpeg">
+                        <img src="images1/images (6).jpeg">
+                        <img src="images1/download.jpeg">
+                        <img src="images1/download (2).png">
+                        <img src="images1/download (1).png">
+                        <img src="images1/images (1).png">
+                        <img src="images1/images.png">
+                    </marquee>
+                </div>
+             </div>
+             <div class="width-100 margin-top-50 footer">
+                <div class="container">
+                    <div class="width-25">
+                        <h2 class="quicklink-heading">Quick Links</h2>
+                        <ul class="quicklink-menu">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">About us</a></li>
+                          <li><a href="#">Gallery</a></li>
+                          <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="width-25">
+                        <h2 class="quicklink-heading">Student Section</h2>
+                        <ul class="quicklink-menu">
+                          <li><a href="#">Result</a></li>
+                          <li><a href="#">Pay Fee</a></li>
+                          <li><a href="#">Training</a></li>
+                          <li><a href="#">Placement</a></li>
+                        </ul>
+                    </div>
+                    <div class="width-25">
+                        <h2 class="quicklink-heading">Information Links</h2>
+                        <ul class="quicklink-menu">
+                          <li><a href="#">News</a></li>
+                          <li><a href="#">R&D Policy</a></li>
+                          <li><a href="#">Anti-Ragging</a></li>
+                          <li><a href="#">Admission</a></li>
+                        </ul>
+                    </div>
+                    <div class="width-25">
+                        <h2 class="quicklink-heading">GET IN TOUCH</h2>
+                        <ul class="get-in-touch">
+                          <li><i class="fa fa-envelope-o"></i> E-MAIL :<a href="#" class=
+                            "footer-e-mail">info@dezven.com</a></li>
+                          <li><i class="fa fa-headphones"></i> WHATS-APP: +91-123 456 789</li>
+                          <li><i class="fa fa-fax"></i> CONTACT NO. : +91 -(123)-4567890</li>
+                          <li><i class="fa fa-globe"></i> WEBSITE:<a href="#" class=
+                            "footer-website">https://wwww.dezven.com</a></li>
+                        </ul>
+                        <ul class="social-media">
+                            <li><a href="#"><img src="images1/download (9).png"></a></li>
+                            <li><a href="#"><img src="images1/download (10).jpeg"></a></li>
+                            <li><a href="#"><img src="images1/download (8).jpeg"></a></li>
+                            <li><a href="#"><img src="images1/download (9).jpeg"></a></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
+             <div class="width-100 footer2-bacbor">
+                <p class="footer-content">Copyright @ 2023, dezven.com All Rights Reserved</p>
+             </div>
+
+       </body>
+ </html>
+
+<script>
+   let icon = document.querySelector(".icon");
+   let ul = document.querySelector("ul");
+
+   icon.addEventListener("click", ()=>{
+    ul.classList.toggle("showData");
+     
+   if(ul.className == "showData"){
+    document.getElementById("bar").className="fa fa-close";
+   }else{
+     document.getElementById("bar").className="fa fa-close";
+   }
+
+   })
+</script>
+
+</body>
+</html> 
